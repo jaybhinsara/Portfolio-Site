@@ -41,7 +41,7 @@ export function Contact() {
           <a href="https://github.com/jaybhinsara" target="_blank" rel="noreferrer">
             GitHub
           </a>
-          <span>München, Germany</span>
+          <span>Heilbronn, Germany</span>
         </motion.div>
       </motion.div>
 
