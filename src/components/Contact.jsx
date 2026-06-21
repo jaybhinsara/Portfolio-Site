@@ -13,7 +13,7 @@ export function Contact() {
       >
         <p className="eyebrow">Contact</p>
         <h2>Let's build your next interface or data-driven tool.</h2>
-        <p className="lede">Based in Munich, available for remote-friendly work across Europe.</p>
+        <p className="lede">Based in Heilbronn, available for remote-friendly work across Europe.</p>
         <motion.div
           className="contact__actions"
           initial={{ opacity: 0 }}
