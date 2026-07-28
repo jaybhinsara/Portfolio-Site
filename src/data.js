@@ -1,80 +1,110 @@
-export const data = {
+﻿export const data = {
   projects: [
     {
-      title: 'Personal Portfolio Website',
-      tech: 'React · Vite · Framer Motion · CSS3',
-      category: ['frontend'],
-      image: '/jay-portfolio-img.png',
-      gradient: 'linear-gradient(135deg, #f2c14f, #2ed4a6)',
-      github: 'https://github.com/jaybhinsara/New-Site.git',
-      body: 'Modern, performance-optimized portfolio with smooth animations, dark/light themes, and accessibility features.',
+      title: 'E-commerce Checkout QA Suite',
+      tech: 'Manual QA | Test Cases | Regression | Browser DevTools',
+      category: ['qa'],
+      gradient: 'linear-gradient(135deg, #ff4d8d, #6d5dfc)',
+      body: 'Dummy case-study project for testing a checkout journey from cart to confirmation across desktop and mobile flows.',
       bullets: [
-        'Achieved 90+ PageSpeed score with lazy loading, code splitting, and critical CSS inlining.',
-        'Built responsive design with mobile-first approach and fluid animations using Framer Motion.',
-        'Implemented theme toggle with localStorage persistence and WCAG-compliant accessibility.'
+        'Designed smoke and regression scenarios for cart, coupon, payment, address, and order-summary states.',
+        'Documented reproducible bugs with expected result, actual result, severity, environment, and screenshots.',
+        'Covered negative paths such as invalid card details, expired coupons, empty carts, and interrupted sessions.'
       ]
     },
     {
-      title: 'Crypto Dashboard Application',
-      tech: 'HTML · CSS · JavaScript · Public APIs',
-      category: ['frontend', 'data'],
-      image: '/dashboard-img.png',
-      gradient: 'linear-gradient(135deg, #03a9f4, #2ed4a6)',
+      title: 'API Health Check Dashboard',
+      tech: 'JavaScript | REST APIs | Postman-style Checks | React',
+      category: ['qa', 'frontend'],
+      gradient: 'linear-gradient(135deg, #00c2ff, #00e887)',
+      body: 'Software engineering and testing project focused on API response validation, clear dashboard states, and practical debugging.',
+      bullets: [
+        'Mapped API states for success, loading, empty responses, server errors, and malformed payloads.',
+        'Built a responsive dashboard interface that makes failing services and stale data easy to spot.',
+        'Created test notes for endpoint behavior, browser console checks, and recovery after refresh.'
+      ]
+    },
+
+    {
+      title: 'Crypto Dashboard Testing Project',
+      tech: 'HTML | CSS | JavaScript | Public APIs',
+      category: ['qa', 'frontend'],
+      gradient: 'linear-gradient(135deg, #6d5dfc, #00c2ff)',
       github: 'https://github.com/jaybhinsara/Crypto_dashboard.git',
-      body: 'Real-time dashboard with live market data, price trends, and responsive layout.',
+      body: 'API-driven dashboard project suitable for testing volatile data, loading states, and responsive data presentation.',
       bullets: [
-        'Integrated external APIs for live prices and trends.',
-        'Built dynamic UI updates for clarity and speed.',
-        'Designed a clean, responsive grid for readability.'
+        'Checked API-driven UI behavior for changing prices, missing data, and delayed responses.',
+        'Planned exploratory tests around refresh behavior, browser resizing, and readable visual hierarchy.',
+        'Practiced JavaScript debugging and clear frontend state handling.'
       ]
     },
     {
-      title: 'Instagram Clone (Frontend)',
-      tech: 'HTML · CSS · JavaScript',
-      category: ['frontend'],
-      gradient: 'linear-gradient(135deg, #f2c14f, #03a9f4)',
-      github: 'https://github.com/jaybhinsara/insta_clone.git',
-      body: 'UI-focused clone capturing feed, cards, and responsive behaviors to mirror production UI.',
-      bullets: [
-        'Replicated feed layouts and media cards.',
-        'Practiced component-like structuring in vanilla JS.',
-        'Applied modern CSS for crisp responsiveness.'
-      ]
-    },
-    {
-      title: 'Password Generator',
-      tech: 'HTML · CSS · JavaScript',
-      category: ['frontend'],
-      image: '/unit-converter.png',
-      gradient: 'linear-gradient(135deg, #2ed4a6, #03a9f4)',
+      title: 'Password Generator Validation',
+      tech: 'HTML | CSS | JavaScript | Functional Testing',
+      category: ['qa', 'frontend'],
+      gradient: 'linear-gradient(135deg, #00e887, #ffb703)',
       github: 'https://github.com/jaybhinsara/Passwor-Generator.git',
-      body: 'Customizable password creator with selectable rules and instant feedback.',
+      body: 'Utility project for validating rule combinations, boundary cases, and user feedback in a compact interface.',
       bullets: [
-        'Random generation logic with user controls.',
-        'Interaction clarity and accessible states.',
-        'Event-driven programming patterns.'
+        'Tested character length boundaries, selected character sets, and empty-option edge cases.',
+        'Checked generated output against expected rules instead of only visual behavior.',
+        'Used the project as a simple example of functional test design.'
+      ]
+    },
+    {
+      title: 'Bug Report Pack Placeholder',
+      tech: 'uTest | test IO | Mercor | Test Documentation',
+      category: ['qa'],
+      gradient: 'linear-gradient(135deg, #fb7185, #facc15)',
+      body: 'Editable placeholder for selected testing-platform examples once approved details can be added without exposing private client information.',
+      bullets: [
+        'Add anonymized examples of bug reports, test charters, or accepted issue writeups.',
+        'Keep client names, confidential product details, and platform-restricted information out of the public page.',
+        'Use this card to show testing judgment, clarity, and repeatable documentation style.'
       ]
     }
   ],
   experience: [
     {
-      when: 'Sep 2022 – Nov 2025 · London, UK',
-      tag: 'Management · Onsite Tech',
-      role: 'Manager & OTP (Onsite Tech Person)',
-      place: 'Lansia Ltd (T/A McDonald\'s)',
+      when: 'Current / recent | Remote',
+      tag: 'AI evaluation and quality review',
+      role: 'AI Evaluation Contributor',
+      place: 'Mercor and related evaluation work',
       bullets: [
-        'Ran Bandmate automated reporting and handled incident triage.',
-        'Troubleshot kiosk and POS network/software/hardware to maintain ~99% uptime.',
-        'Coordinated shift-based IT operations and digital reporting.'
+        'Reviewed AI-generated outputs for accuracy, instruction following, clarity, and practical usefulness.',
+        'Compared responses against task requirements and documented issues with concise feedback.',
+        'Editable: add exact platform names, dates, domains evaluated, and approved examples when available.'
       ]
     },
     {
-      when: 'Dec 2021 – Mar 2022 · Surat, India',
-      tag: 'Web Development',
+      when: 'Current / recent | Remote platforms',
+      tag: 'QA testing platforms',
+      role: 'QA Testing Contributor',
+      place: 'Mercor, test IO, and uTest',
+      bullets: [
+        'Participated in software testing work through QA and evaluation platforms including Mercor, test IO, and uTest.',
+        'Focused on clear issue reproduction, environment notes, severity reasoning, and concise reporting.',
+        'Editable: add exact dates, client-safe project types, device coverage, and approved examples when available.'
+      ]
+    },
+    {
+      when: 'Sep 2022 - Nov 2025 | London, UK',
+      tag: 'Operations and onsite technology',
+      role: 'Manager & OTP (Onsite Tech Person)',
+      place: 'Lansia Ltd (T/A McDonald\'s)',
+      bullets: [
+        'Handled incident triage, reporting workflows, and hands-on troubleshooting for store technology.',
+        'Investigated kiosk, POS, network, software, and hardware issues with a structured problem-solving approach.',
+        'Coordinated operational handoffs and documented issues clearly for follow-up.'
+      ]
+    },
+    {
+      when: 'Dec 2021 - Mar 2022 | Surat, India',
+      tag: 'Web development and testing support',
       role: 'Web Developer Intern',
       place: 'Adbookee Media Solutions',
       bullets: [
-        'Supported live builds, testing, and deployment.',
+        'Supported live builds, testing, debugging, and deployment.',
         'Practiced debugging and Git-based workflows.',
         'Applied DRY principles for reusable components.'
       ]
@@ -83,39 +113,42 @@ export const data = {
   certificates: [
     {
       title: 'JPMorganChase Software Engineering Simulation',
-      tech: 'Spring Boot · Kafka · REST · JPA · H2',
+      tech: 'Spring Boot | Kafka | REST | JPA | H2',
       bullets: [
-        'Built Spring Boot microservice with Kafka-backed transaction processing and validation.',
+        'Built a Spring Boot microservice with transaction processing and validation.',
         'Implemented persistence and balance updates with Spring Data JPA and H2.',
         'Integrated external REST APIs and exposed balance query endpoints.',
-        'Hardened reliability with Maven-based testing and debugging.'
+        'Used Maven-based testing and debugging during the simulation.'
       ]
     }
   ],
   education: [
     {
-      when: 'Nov 2025 – Present · Remote',
+      when: 'Nov 2025 - Present | Remote',
       tag: 'Full Stack',
       title: 'Full Stack Developer Course, Scrimba',
-      lede: 'HTML5 · CSS3 · Flexbox · Grid · Responsive · JavaScript ES6+ · DOM · Async/Await · TypeScript · React · Node.js · Express · Next.js · REST · JSON · State management · AI-assisted development · Databases · Git & GitHub.'
+      lede: 'HTML5, CSS3, responsive design, JavaScript ES6+, DOM, async/await, TypeScript, React, Node.js, Express, Next.js, REST, JSON, state management, AI-assisted development, databases, Git, and GitHub.'
     },
     {
-      when: 'Sep 2022 – Sep 2025 · London, UK',
+      when: 'Sep 2022 - Sep 2025 | London, UK',
       tag: 'Postgraduate',
       title: 'MSc Software Engineering, University of West London',
-      lede: 'Software Design · Cloud Computing · Data Management · Advanced Programming.'
+      lede: 'Software design, cloud computing, data management, and advanced programming.'
     },
     {
-      when: 'Nov 2018 – Mar 2021 · Surat, India',
+      when: 'Nov 2018 - Mar 2021 | Surat, India',
       tag: 'Undergraduate',
       title: 'BSc Information Technology, P.P. Savani University',
-      lede: 'Web Application Development · Database Systems · Python · IoT · Blockchain Technology.'
+      lede: 'Web application development, database systems, Python, IoT, and blockchain technology.'
     }
   ],
   skills: [
-    { title: 'Frontend', body: 'React, JavaScript (ES6+), HTML5, CSS3 (Flexbox, Grid), Next.js basics, accessibility, responsive systems.' },
-    { title: 'Backend & Data', body: 'Spring Boot, REST APIs, Express.js, MySQL, basic CRUD, server administration, CLI.' },
-    { title: 'Workflow', body: 'Git & GitHub, debugging, testing, DRY patterns, production control, performance-minded UIs.' },
-    { title: 'AI-assisted', body: 'Prompting, AI tooling integration, rapid prototyping, accessible-by-default UI checks.' }
+    { title: 'Manual QA', body: 'Exploratory testing, smoke checks, regression testing, test case design, defect triage, user-flow validation, and release-readiness reviews.' },
+    { title: 'Bug Reporting', body: 'Clear reproduction steps, actual vs expected results, environment details, severity notes, screenshots, logs, and developer-friendly summaries.' },
+    { title: 'Testing and AI Evaluation', body: 'Mercor, test IO, uTest, AI output evaluation, GitHub issues, browser DevTools, spreadsheet-based test tracking, and API validation workflows.' },
+    { title: 'Frontend Engineering', body: 'React, JavaScript ES6+, HTML5, CSS3, responsive layouts, component structure, UI state handling, and accessibility-minded implementation.' },
+    { title: 'Backend & APIs', body: 'Spring Boot, REST APIs, Express.js, MySQL, CRUD workflows, server administration basics, and command-line debugging.' },
+    { title: 'Workflow', body: 'Git and GitHub, debugging, code review readiness, structured documentation, DRY patterns, and performance-aware UI work.' }
   ]
 };
+

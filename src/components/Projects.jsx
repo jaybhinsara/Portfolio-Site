@@ -1,49 +1,36 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { data } from '../data';
+
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'qa', label: 'QA Testing' },
+  { id: 'frontend', label: 'Engineering' },
+];
 
 export function Projects() {
   const [filter, setFilter] = useState('all');
 
   const filtered = filter === 'all'
     ? data.projects
-    : data.projects.filter(p => p.category.includes(filter));
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-  };
-
-  const jellyVariants = {
-    rest: { scale: 1 },
-    bounce: {
-      scale: [1, 1.05, 0.95, 1.02, 1],
-      transition: { duration: 0.6, ease: 'easeInOut' },
-    },
-  };
+    : data.projects.filter((project) => project.category.includes(filter));
 
   return (
     <section id="projects" className="section shell">
       <motion.div
-        className="section__header"
+        className="section__header section__header--split"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: '-100px' }}
       >
-        <p className="eyebrow">Selected Work</p>
-        <h2>Projects that mix data, polish, and real-world use.</h2>
+        <div>
+          <p className="eyebrow">Selected Work</p>
+          <h2>Testing case studies and engineering projects with clear scope.</h2>
+        </div>
+        <p className="section__note">
+          A stronger portfolio shows how you think. These cards mix real repo work with dummy QA projects that can be replaced by approved platform examples later.
+        </p>
       </motion.div>
 
       <motion.div
@@ -53,73 +40,53 @@ export function Projects() {
         transition={{ duration: 0.5, delay: 0.1 }}
         viewport={{ once: true }}
       >
-        {['all', 'frontend', 'data'].map((f) => (
+        {filters.map((item) => (
           <motion.button
-            key={f}
-            className={`chip ${filter === f ? 'active' : ''}`}
-            onClick={() => setFilter(f)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            key={item.id}
+            className={`chip ${filter === item.id ? 'active' : ''}`}
+            onClick={() => setFilter(item.id)}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            type="button"
           >
-            {f === 'all' ? 'All' : f === 'frontend' ? 'Frontend' : 'Data/APIs'}
+            {item.label}
           </motion.button>
         ))}
       </motion.div>
 
-      <motion.div
-        className="projects-grid"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        key={filter}
-      >
-        <AnimatePresence mode="wait">
-          {filtered.map((p, i) => (
-            <motion.div
-              key={p.title}
-              className="project-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ 
-                opacity: 1, 
-                y: 0,
-                scale: [1, 1.03, 0.98, 1],
-                transition: { 
-                  duration: 0.5,
-                  ease: 'easeOut'
-                }
-              }}
-              exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
-              viewport={{ once: false, amount: 'some', margin: '-50px' }}
-              style={{
-                '--gradient': p.gradient
-              }}
+      <motion.div className="projects-grid" layout>
+        <AnimatePresence mode="popLayout">
+          {filtered.map((project, index) => (
+            <motion.article
+              key={project.title}
+              className={`project-card ${index === 0 && filter === 'all' ? 'project-card--featured' : ''}`}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.35 }}
+              layout
+              style={{ '--gradient': project.gradient }}
             >
-              <span className="project-card__bg"></span>
-
+              <div className="project-card__accent" aria-hidden="true" />
               <div className="project-card__content">
+                <div className="project-card__kicker">Case {String(index + 1).padStart(2, '0')}</div>
                 <div className="project-card__header">
-                  <h3>{p.title}</h3>
-                  <span className="tag">{p.tech}</span>
+                  <h3>{project.title}</h3>
+                  <span className="tag">{project.tech}</span>
                 </div>
-                <p className="project-card__body">{p.body}</p>
+                <p className="project-card__body">{project.body}</p>
                 <ul className="project-card__bullets">
-                  {p.bullets.map((b, idx) => (
-                    <li key={idx}>{b}</li>
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
-              </div>
-
-              {p.github && (
-                <>
-                  <div className="project-card__string"></div>
-                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-card__tag-outer" title="View on GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-card__link">
+                    View repository
                   </a>
-                </>
-              )}
-            </motion.div>
+                )}
+              </div>
+            </motion.article>
           ))}
         </AnimatePresence>
       </motion.div>

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { data } from '../data';
 
 export function Skills() {
@@ -26,8 +26,8 @@ export function Skills() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: '-100px' }}
       >
-        <p className="eyebrow">Capabilities</p>
-        <h2>What I use to ship reliable products.</h2>
+        <p className="eyebrow">Skills and Tools</p>
+        <h2>Testing coverage plus implementation skills for product teams.</h2>
       </motion.div>
 
       <motion.div

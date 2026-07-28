@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { data } from '../data';
 
 export function Experience() {
@@ -27,7 +27,7 @@ export function Experience() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <p className="eyebrow">Experience</p>
-        <h2>Blending on-the-ground operations with engineering.</h2>
+        <h2>Operational troubleshooting, web development, and practical quality habits.</h2>
       </motion.div>
 
       <motion.div
@@ -47,8 +47,8 @@ export function Experience() {
               <h3>{exp.role}</h3>
               <p className="lede">{exp.place}</p>
               <ul>
-                {exp.bullets.map((b) => (
-                  <li key={b}>{b}</li>
+                {exp.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
             </div>

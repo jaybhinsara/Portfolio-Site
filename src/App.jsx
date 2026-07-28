@@ -1,24 +1,12 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState, lazy, Suspense } from 'react';
+﻿import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Experience } from './components/Experience';
 import { Education } from './components/Education';
 import { Skills } from './components/Skills';
 import { Contact } from './components/Contact';
-import { Sparkles } from './components/Sparkles';
 import { ThemeToggle } from './components/ThemeToggle';
-
-const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then(mod => ({ default: mod.SpeedInsights })))
-
-// Preload critical assets
-if (typeof document !== 'undefined') {
-  const link = document.createElement('link');
-  link.rel = 'preload';
-  link.as = 'script';
-  link.href = '/_vercel/insights/script.js';
-  document.head.appendChild(link);
-}
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -36,19 +24,18 @@ export default function App() {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <>
-      <Sparkles />
       <motion.nav className="nav" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
         <a href="#" className="brand" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Jay Bhinsara</a>
-        <nav>
-          <a href="#projects">Projects</a>
+        <nav aria-label="Primary navigation">
+          <a href="#projects">Work</a>
           <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
           <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </nav>
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
@@ -58,14 +45,10 @@ export default function App() {
         <Hero />
         <Projects />
         <Experience />
-        <Education />
         <Skills />
+        <Education />
         <Contact />
       </main>
-
-      <Suspense fallback={null}>
-        <SpeedInsights />
-      </Suspense>
 
       <motion.footer
         className="shell footer"
@@ -74,7 +57,7 @@ export default function App() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p>© Jay Bhinsara · Built with React.</p>
+        <p>© Jay Bhinsara | QA Tester and Software Engineer | Built with React.</p>
       </motion.footer>
     </>
   );

@@ -1,58 +1,42 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jay Bhinsara - Software Engineer. Portfolio showcasing React, JavaScript, and full-stack projects with smooth animations and modern design." />
-    <meta name="keywords" content="Jay Bhinsara, Software Engineer, React, JavaScript, Full Stack Developer, Web Development, Portfolio" />
+    <meta name="description" content="Jay Bhinsara - QA Tester and Software Engineer portfolio with testing skills, software engineering projects, and contact information." />
+    <meta name="keywords" content="Jay Bhinsara, QA Tester, Software Engineer, Manual Testing, React, JavaScript, Portfolio" />
     <meta name="author" content="Jay Bhinsara" />
-    <meta name="theme-color" content="#0f1115" />
+    <meta name="theme-color" content="#0b1020" />
     <meta name="robots" content="index, follow" />
-    <link rel="preconnect" href="https://vercel.app" />
-    <link rel="dns-prefetch" href="https://vercel.app" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jayBhinsara.com" />
-    <meta property="og:title" content="Jay Bhinsara · Software Engineer Portfolio" />
-    <meta property="og:description" content="Explore my projects, experience, and skills in full-stack development with React and JavaScript." />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:title" content="Jay Bhinsara | QA Tester and Software Engineer" />
+    <meta property="og:description" content="Portfolio focused on QA testing, bug reporting, responsive frontend work, and software engineering projects." />
+    <meta property="og:image" content="/browser.png" />
     <meta property="og:site_name" content="Jay Bhinsara Portfolio" />
-    
-    <!-- Twitter -->
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jay Bhinsara · Software Engineer Portfolio" />
-    <meta name="twitter:description" content="Explore my projects, experience, and skills in full-stack development." />
-    <meta name="twitter:image" content="/og-image.png" />
-    
-    <title>Jay Bhinsara · Portfolio</title>
+    <meta name="twitter:title" content="Jay Bhinsara | QA Tester and Software Engineer" />
+    <meta name="twitter:description" content="QA testing and software engineering portfolio." />
+    <meta name="twitter:image" content="/browser.png" />
+
+    <title>Jay Bhinsara | QA Tester and Software Engineer</title>
     <style>
-      /* Critical CSS - Inline for faster FCP */
       :root {
-        --bg: #0f1115;
-        --text: #e6e8ef;
-        --accent: #f2c14f;
+        --bg: #0b1020;
+        --text: #f8fafc;
       }
       :root.light {
-        --bg: #f7f8fb;
-        --text: #0b0f14;
-        --accent: #f2b045;
+        --bg: #f5f7fb;
+        --text: #101827;
       }
       * { box-sizing: border-box; }
-      html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; }
-      body {
-        font-family: 'Space Grotesk', 'Clash Display', 'Segoe UI', sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        letter-spacing: -0.01em;
-      }
-      .shell { width: min(1200px, 100%); margin: 0 auto; padding: 32px 16px; max-width: 100%; }
-      .nav { position: sticky; top: 16px; display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
+      html, body { margin: 0; min-width: 320px; overflow-x: hidden; }
+      body { background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; letter-spacing: 0; }
+      .shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+      .nav { position: sticky; top: 16px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px; width: min(1160px, calc(100% - 32px)); margin: 16px auto 0; padding: 12px 14px; }
     </style>
   </head>
   <body>

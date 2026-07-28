@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { data } from '../data';
 
 export function Education() {
@@ -26,8 +26,8 @@ export function Education() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: '-100px' }}
       >
-        <p className="eyebrow">Education</p>
-        <h2>Continuous learning across full-stack, cloud, and AI-assisted development.</h2>
+        <p className="eyebrow">Education and Learning</p>
+        <h2>Software engineering foundation with ongoing full-stack development practice.</h2>
       </motion.div>
 
       <motion.div
@@ -46,6 +46,22 @@ export function Education() {
             <div>
               <h3>{edu.title}</h3>
               <p className="lede">{edu.lede}</p>
+            </div>
+          </motion.article>
+        ))}
+        {data.certificates.map((cert) => (
+          <motion.article key={cert.title} className="timeline__item" variants={itemVariants}>
+            <div className="timeline__meta">
+              <p className="label">Certificate / Simulation</p>
+              <p className="tag">{cert.tech}</p>
+            </div>
+            <div>
+              <h3>{cert.title}</h3>
+              <ul>
+                {cert.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
             </div>
           </motion.article>
         ))}

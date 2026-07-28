@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import './Contact.css';
 
 export function Contact() {
@@ -12,8 +12,10 @@ export function Contact() {
         viewport={{ once: true, margin: '-100px' }}
       >
         <p className="eyebrow">Contact</p>
-        <h2>Let's build your next interface or data-driven tool.</h2>
-        <p className="lede">Based in Heilbronn, available for remote-friendly work across Europe.</p>
+        <h2>Need someone who can test carefully and build practically?</h2>
+        <p className="lede">
+          I am open to QA testing, software testing, frontend engineering, and hybrid roles where product quality and implementation meet.
+        </p>
         <motion.div
           className="contact__actions"
           initial={{ opacity: 0 }}
@@ -52,18 +54,18 @@ export function Contact() {
         transition={{ duration: 0.6, delay: 0.1 }}
         viewport={{ once: true, margin: '-100px' }}
       >
-        <div className="panel">
-          <div className="panel__top">
+        <div className="panel contact-card">
+          <div className="panel__top panel__top--compact">
             <span>Availability</span>
-            <strong className="flickering-text">Accepting new<br />work</strong>
+            <strong>Open to roles</strong>
           </div>
           <p className="panel__body">
-            Frontends, dashboards, and integrations with a bias toward clean execution and measurable uptime.
+            Editable: add preferred role type, notice period, work authorization, and strongest platform examples when confirmed.
           </p>
           <div className="panel__tags">
-            <span>Remote-friendly</span>
-            <span>Full-time</span>
-            <span>Contract</span>
+            <span>QA Tester</span>
+            <span>Software Tester</span>
+            <span>Software Engineer</span>
           </div>
         </div>
       </motion.div>

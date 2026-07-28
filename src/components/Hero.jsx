@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 
 export function Hero() {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,23 +31,27 @@ export function Hero() {
       >
         <motion.div className="hero__copy" variants={containerVariants} initial="hidden" animate="visible">
           <motion.p className="eyebrow" variants={itemVariants}>
-            Software Engineer | IT Professional · Heilbronn
+            QA Tester | Software Engineer | Product-minded bug hunter
           </motion.p>
           <motion.h1 variants={itemVariants}>
-            Building bold, reliable web experiences with React, JavaScript, and thoughtful UX.
+            I test the risky parts, build the useful parts, and make product quality easier to see.
           </motion.h1>
           <motion.p className="lede" variants={itemVariants}>
-            Though my background started in management, I now craft AI-assisted, accessible interfaces and full-stack prototypes. I bring hands-on React, JavaScript, CSS, and backend knowledge to ship resilient products.
+            I work across manual QA, exploratory testing, bug reporting, responsive frontend development, and API-aware debugging. My focus is simple: find issues early, explain them clearly, and help teams ship cleaner software.
           </motion.p>
           <motion.div className="hero__ctas" variants={itemVariants}>
-            <a className="btn primary" href="mailto:jaybhinsara9@gmail.com">Email Jay</a>
-            <a className="btn ghost" href="https://linkedin.com/in/jay-bhinsara" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="btn primary" href="#contact">Start a conversation</a>
+            <a className="btn ghost" href="#projects">See projects</a>
             <a className="btn ghost" href="https://github.com/jaybhinsara" target="_blank" rel="noreferrer">GitHub</a>
           </motion.div>
           <motion.div className="hero__meta" variants={itemVariants}>
             <div>
-              <span className="label">Primary stack</span>
-              <span className="value">React · JavaScript · HTML · CSS · MySQL · Spring Boot · CLI · Express.js</span>
+              <span className="label">Testing</span>
+              <span className="value">Manual QA, exploratory testing, regression, bug reports, platform testing</span>
+            </div>
+            <div>
+              <span className="label">Engineering</span>
+              <span className="value">React, JavaScript, REST APIs, Spring Boot, MySQL, Git</span>
             </div>
           </motion.div>
         </motion.div>
@@ -59,38 +62,39 @@ export function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
         >
-          <div className="panel">
-            <div className="panel__top">
-              <span>Projects shipped</span>
-              <motion.strong
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.6 }}
-              >
-                4
-              </motion.strong>
+          <div className="panel qa-panel">
+            <div className="panel__top panel__top--compact">
+              <span>Quality workflow</span>
+              <strong>QA + Code</strong>
             </div>
             <p className="panel__body">
-              AI-assisted frontends, API-driven dashboards, and component-driven UI systems with a focus on responsiveness and reliability.
+              A tester who can read the UI, inspect the browser, understand API behavior, and communicate defects in a way engineers can act on.
             </p>
+            <div className="qa-scoreboard" aria-label="Quality assurance strengths">
+              <div>
+                <span className="score">01</span>
+                <span>Explore critical flows</span>
+              </div>
+              <div>
+                <span className="score">02</span>
+                <span>Isolate defects</span>
+              </div>
+              <div>
+                <span className="score">03</span>
+                <span>Write useful reports</span>
+              </div>
+              <div>
+                <span className="score">04</span>
+                <span>Verify fixes</span>
+              </div>
+            </div>
             <div className="panel__tags">
-              {['React', 'APIs', 'Performance', 'Accessibility'].map((tag, i) => (
-                <motion.span
-                  key={tag}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.5 + i * 0.08 }}
-                >
-                  {tag}
-                </motion.span>
-              ))}
+              <span>Mercor</span>
+              <span>test IO</span>
+              <span>uTest</span>
+              <span>React</span>
             </div>
           </div>
-          <motion.div
-            className="orb"
-            animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
         </motion.div>
       </motion.div>
     </header>
